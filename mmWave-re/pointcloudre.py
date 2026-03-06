@@ -1,7 +1,6 @@
 import open3d as o3d
 import numpy as np
 
-from generate_radar import get_random_sensor_position
 from generate_radar import get_sensor_array
 from generate_radar import get_180_degree_scan_trajectory
 
