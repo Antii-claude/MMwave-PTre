@@ -3,6 +3,7 @@ import numpy as np
 
 from generate_radar import get_sensor_array
 from generate_radar import get_180_degree_scan_trajectory
+from pointcloud_noise_add import Noise_Add
 
 def specularity_aware_filter(pcd, sensor_array, tau_degrees=25,theta_l=75,theta_v=75):
     """
@@ -77,12 +78,9 @@ def specularity_aware_filter(pcd, sensor_array, tau_degrees=25,theta_l=75,theta_
     if len(collected_indices) == 0:
         print("Warning: No points collected. Check normals or threshold.")
         return o3d.geometry.PointCloud()
-    print("已构建最终点云，正在绘图... ")
     final_indices = list(collected_indices)
     pcd_filtered = pcd.select_by_index(final_indices)
     
-    # 可视化结果
-    o3d.visualization.draw_geometries([pcd_filtered], window_name="Combined Radar Observation")
     return pcd_filtered
 
 # 【测试程序】 
@@ -99,5 +97,10 @@ P_all = get_180_degree_scan_trajectory(distance=3.0)
 # 2. 传入滤波器
 filtered_pcd = specularity_aware_filter(pcd, sensor_array=P_all, tau_degrees=25)
 
+# 3.添加噪点
+final_pcd = Noise_Add(filtered_pcd)
 
+# 可视化结果
+print("已构建最终点云，绘图完成✅ ")
+o3d.visualization.draw_geometries([final_pcd], window_name="Combined Radar Observation")
 
