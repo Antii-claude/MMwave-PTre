@@ -50,7 +50,7 @@ def get_sensor_array(center, direction_to_origin, width=0.2, height=0.2, num_wid
 
 def get_180_degree_scan_trajectory(
     distance=3.0,
-    num_views=60,
+    num_views=5,
     array_width=0.2,
     array_height=0.2,
     pts_per_row=20,

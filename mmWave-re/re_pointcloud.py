@@ -20,9 +20,10 @@ for ply_path in in_root.rglob("*.ply"):
     if points.shape[0] == 0:
         print(f"跳过空点云: {rel_path}")
         continue
-   
-    pcd.points = specularity_aware_filter(points)
-    pcd.points = Noise_Add(pcd.points)
+    P_all = get_180_degree_scan_trajectory(distance=3.0)
+    
+    pcd = specularity_aware_filter(pcd,P_all)
+    pcd= Noise_Add(pcd)
 
     o3d.io.write_point_cloud(str(out_path), pcd)
 

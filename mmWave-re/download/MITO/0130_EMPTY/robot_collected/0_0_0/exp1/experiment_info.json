@@ -1,0 +1,14 @@
+{
+    "aperture": "planar",
+    "aperture size": "normal",
+    "background": "tripod",
+    "los collection date": "0130",
+    "los background date": "0130",
+    "nlos collection date": "0130",
+    "nlos background date": "0130",
+    "los 24 calibration": "000",
+    "nlos 24 calibration": "000",
+    "mount type": "old",
+    "rx offset": "y",
+    "occlusion": "cardboard"
+}

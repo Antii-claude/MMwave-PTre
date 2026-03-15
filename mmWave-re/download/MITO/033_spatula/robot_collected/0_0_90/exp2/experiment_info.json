@@ -1,0 +1,14 @@
+{
+    "aperture": "planar",
+    "aperture size": "almost-square",
+    "background": "styrofoam",
+    "los collection date": "0815",
+    "los background date": "0815",
+    "nlos collection date": "0815",
+    "nlos background date": "0815",
+    "los 24 calibration": "02/13",
+    "nlos 24 calibration": "02/13",
+    "mount type": "new",
+    "rx offset": "x",
+    "occlusion": "cardboard"
+}
