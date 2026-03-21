@@ -8,7 +8,7 @@ def Noise_Add(group,sigma_gaussian=0.05,sigma_outliers=0.1,keep_ratio_dropout=0.
     2.添加随机离群点(outliers)
     3.随机删除点(dropout)
 
-    这一部分的参数调整需要负责PointTR的同学尝试修正，这里我的取值仅作测试
+    这一部分的参数调整需要负责PointTR的同学尝试修正，这里我的取值仅作测试，之后也有可能需要体现方向性
     '''
     points = np.asarray(group.points)
     #添加高斯噪点
